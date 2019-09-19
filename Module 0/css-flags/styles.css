@@ -1,0 +1,329 @@
+* {
+    box-sizing: border-box;
+    font-size: 0px;
+}
+
+.flags {
+    width: 100%;
+    height: 1200px;
+    background: peachpuff;
+}
+
+.France {
+    width: 30%;
+    height: 23%;
+    background: white;
+    position: relative;
+    display: inline-block;
+    margin: .5%
+}
+
+.fblue {
+    width: 33.33%;
+    height: 100%;
+    background: blue;
+    float: left;
+    position: relative;
+}
+
+.fred {
+    width: 33.33%;
+    height: 100%;
+    background: red;
+    float: right;
+    position: relative;
+}
+
+.Germany {
+    width: 30%;
+    height: 23%;
+    background: yellow;
+    position: relative;
+    display: inline-block;
+    margin: .5%
+}
+
+.gblack {
+    width: 100%;
+    height: 33.33%;
+    background: black;
+    position: relative;
+    
+}
+
+.gred {
+    width: 100%;
+    height: 33.33%;
+    background: red;
+    position: relative;
+}
+
+.Madagascar {
+    width: 30%;
+    height: 23%;
+    background: white;
+    position: relative;
+    display: inline-block;
+    margin: .5%;
+}
+
+.mred {
+    width: 66.66%;
+    height: 50%;
+    background: red;
+    float: right;
+    position: relative;
+    display: inline-block;
+}
+
+.mgreen {
+    width: 66.66%;
+    height: 50%;
+    background: darkgreen;
+    float: right;
+    position: relative;
+    display: inline-block;
+}
+
+.Switzerland {
+    width: 30%;
+    height: 23%;
+    background: red;
+    position: relative;
+    display: inline-block;
+    margin: .5%;
+}
+
+.svwhite {
+    width: 20%;
+    height: 60%;
+    background: white;
+    position: relative;
+    top: 20%;
+    left: 40%;
+}
+
+.shwhite {
+    width: 60%;
+    height: 20%;
+    background: white;
+    position: relative;
+    left: 20%;
+    bottom: 20%;
+}
+
+.Sweden {
+    width: 30%;
+    height: 23%;
+    background: blue;
+    position: relative;
+    display: inline-block;
+    margin: .5%;
+}
+
+.shyellow {
+    width: 100%;
+    height: 20%;
+    background: yellow;
+    position: relative;
+    top: 40%;
+}
+
+.svyellow {
+    width: 15%;
+    height: 100%;
+    background: yellow;
+    position: relative;
+    bottom: 20%;
+    left: 30%;
+}
+
+.Gambia {
+    width: 30%;
+    height: 23%;
+    background: darkgreen;
+    position: relative;
+    display: inline-block;
+    margin: .5%;
+}
+
+.gared {
+    width: 100%;
+    height: 33.33%;
+    background: red;
+    position: relative;
+}
+
+.gablue {
+    width: 100%;
+    height: 33.33%;
+    background: blue;
+    border-top: 15px solid white;
+    border-bottom: 15px solid white;
+}
+
+.Tonga {
+    width: 30%;
+    height: 23%;
+    background: darkred;
+    position: relative;
+    display: inline-block;
+    margin: .5%;
+}
+
+.topleft {
+    width: 40%;
+    height: 50%;
+    background: white;
+    position: relative;
+    display: block;
+}
+
+.vert {
+    width: 20%;
+    height: 50%;
+    background: darkred;
+    position: relative;
+    top: 25%;
+    left: 40%;
+}
+
+.hori {
+    width: 50%;
+    height: 20%;
+    background: darkred;
+    position: relative;
+    bottom: 10%;
+    left: 25%;
+}
+
+.Japan {
+    width: 30%;
+    height: 23%;
+    background: white;
+    position: relative;
+    display: inline-block;
+    margin: .5%;
+}
+
+.rcircle {
+    height: 70%;
+    width: 50%;
+    background: red;
+    border-radius: 50%;
+    position: relative;
+    left: 25%;
+    top: 15%;
+}
+
+.Greece {
+    width: 30%;
+    height: 23%;
+    position: relative;
+    display: inline-block;
+    margin: .5%;
+    background: repeating-linear-gradient(
+        0deg,
+        blue,
+        blue 11.11%,
+        white 11.11%,
+        white 22.22%
+    );
+}
+
+.gtop {
+    width: 33.33%;
+    height: 55.55%;
+    background: blue;
+    position: relative;
+    display: block;
+}
+
+.gvert {
+    width: 20%;
+    height: 101%;
+    position: relative;
+    background: white;
+    left: 40%;
+}
+
+.ghori {
+    width: 100%;
+    height: 19.55%;
+    background: white;
+    position: relative;
+    bottom: 61%;
+}
+
+.Niger {
+    width: 30%;
+    height: 23%;
+    background: white;
+    margin: .5%;
+    position: relative;
+    display: inline-block;
+}
+
+.ntopbar {
+    width: 100%;
+    height: 33.33%;
+    background: orangered;
+    position: relative;
+}
+
+.nbotbar {
+    width: 100%;
+    height: 33.33%;
+    background: limegreen;
+    position: relative;
+    top: 33.33%;
+}
+
+.ncircle {
+    width: 22%;
+    height: 30%;
+    background: orangered;
+    position: relative;
+    border-radius: 50%;
+    left: 39%;
+    bottom: 31.5%;
+}
+
+.Maldives {
+    width: 30%;
+    height: 23%;
+    background: red;
+    margin: .5%;
+    position: relative;
+    display: inline-block;
+}
+
+.minsidebox {
+    width: 60%;
+    height: 60%;
+    background: forestgreen;
+    position: relative;
+    display: block;
+    left: 20%;
+    top: 20%;
+}
+
+.mcrescent {
+    background: white;
+    width: 30%;
+    height: 40%;
+    border-radius: 50%;
+    position: relative;
+    left: 40%;
+    bottom: 30%;
+}
+
+.mcrescentone {
+    background: forestgreen;
+    width: 30%;
+    height: 40%;
+    border-radius: 50%;
+    position: relative;
+    bottom: 70%;
+    left: 45%;
+}

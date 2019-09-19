@@ -1,0 +1,45 @@
+body {
+    background: gray;
+    height: 800px;
+}
+
+ul {
+    margin-left: 10px;
+}
+
+.square {
+    content: "";
+    border: 5px solid black;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+}
+
+h1 {
+    margin: 20px;
+}
+
+.content {
+    float: left;
+}
+
+#blue {
+    color: blue;
+}
+
+#red {
+    color: red;
+}
+
+#green {
+    color: green;
+}
+
+#orange {
+    color: orange;
+}
+
+#yellow {
+    color: yellow;
+}
+
