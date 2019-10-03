@@ -1,0 +1,60 @@
+.title {
+    text-align: center;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background-image: linear-gradient(to right, lightblue, lightgreen);
+}
+
+.main {
+    border: 2px solid black;
+    width: 50%;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#addItem {
+    width: 10vw;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 5px;
+    text-decoration: none;
+}
+
+#addTodo {
+    border-bottom: 2px solid black;
+    padding: 10px 20px 5px 20px;
+
+}
+
+.input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.label {
+    margin: 10px;
+}
+
+#list {
+    flex-direction: column;
+    display: flex;
+}
+
+#list > li{
+    list-style-type: none;
+    margin: 10px auto;
+}
+
+#list div {
+    margin-bottom: 10px;
+    text-align: center;
+}
