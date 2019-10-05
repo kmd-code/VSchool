@@ -16,12 +16,17 @@ body {
 }
 
 #addItem {
-    width: 10vw;
+    width: 100%;
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid black;
     padding: 5px;
     text-decoration: none;
+    box-sizing: border-box;
+}
+
+#addItem:hover{
+    background-color: lightgreen
 }
 
 #addTodo {
@@ -45,16 +50,30 @@ body {
 }
 
 #list {
-    flex-direction: column;
     display: flex;
+    flex-direction: column;
 }
 
-#list > li{
+#list > li {
     list-style-type: none;
-    margin: 10px auto;
+    display: inline-flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin-right: 3vw;
+    border-bottom: 1px solid black;
+    font-size: 24px;
 }
 
-#list div {
-    margin-bottom: 10px;
-    text-align: center;
+.delete {
+    width: 5vw;
+    font-size: 20px;
+    border: none;
 }
+
+.delete:hover {
+    background-color: red;
+    color: white;
+}
+
+
+

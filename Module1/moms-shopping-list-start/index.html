@@ -19,32 +19,28 @@
             <h3 class="title">Add Item</h3>
         </div>
         <form name="addItem" id="addTodo">
-            <label class="label" for="title">Item name</label>
-            <input class="input" name="title" id="title" />
+            <label class="label" for="title">Item Name</label>
+            <input class="input" id="input" placeholder="Add your ToDo" />
             <button id="addItem" type="button">Add Item</button>
         </form>
-        <div class="todos">
-            <div class="title-bar">
-                <h3 class="title">list of items</h3>
+        <div class="toDos">
+            <div class="titleBar">
+                <h3 class="title" >List of Items</h3>
             </div>
             <hr>
             <ul id="list">
                 <li>
                     <div>milk</div>
-                    <button>edit</button>
-                    <button>X</button>
+                    <button class="delete">X</button>
                 </li>
                 <li>
-                    <div>cherios</div>
-                    <button>edit</button>
-                    <button>X</button>
+                    <div>cheerios</div>
+                    <button class="delete">X</button>
                 </li>
                 <li>
                     <div>2 goats</div>
-                    <button>edit</button>
-                    <button>X</button>
-                </li>  
-                <hr>              
+                    <button class="delete">X</button>
+                </li>                
             </ul>
         </div>
     </div>
