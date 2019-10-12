@@ -1,0 +1,76 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-image: linear-gradient(to right, lightblue, lightgreen);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+form > span {
+    font-weight: 700;
+    font-size: 28px;
+}
+
+input {
+    width: 15%;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+}
+
+button {
+    width: 20%;
+    height: 30px;
+    border: none;
+    background-color: lightgreen;
+    font-weight: 700;
+    font-size: 28px;
+}
+
+.result {
+    width: 10%;
+    font-size: 32px;
+    font-weight: 700;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.flexCon {
+    border: 2px solid black;
+    padding: 15px;
+    background-color: white;
+}
+
+form {
+    display: flex;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#addition {
+    width: 35vw;
+}
+
+#subtract {
+    width: 35vw;
+}
+
+#multiply {
+    width: 35vw;
+}

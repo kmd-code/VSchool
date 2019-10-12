@@ -1,5 +1,5 @@
 function largest(array){
-    let x = ""
+    let x = -Infinity
     for (i = 0; i < array.length; i++){
         if (array[i] > x){
             x = array[i];

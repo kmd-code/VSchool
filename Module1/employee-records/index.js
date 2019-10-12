@@ -8,6 +8,9 @@ let employees = [];
             console.log("Name: " + this.name + ", Job Title: " + this.jobTitle + ", Salary: " + this.salary + ", Status: " + this.status);
         }
     }   
+const firstName = "rick"
+const lastName = "sanchez"
+    console.log(`Hello ${firstName} ${lastName}`)
 
 let x = new Employee("Kaydon", "Sales", "$50k");
 let y = new Employee("Jared", "Sales", "$100k");
@@ -22,3 +25,12 @@ x.status = "Part-Time";
 x.printEmployeeForm();
 y.printEmployeeForm();
 z.printEmployeeForm();
+
+
+
+
+function reverseStr(str){
+    return str.split("").reverse().join("")
+}
+
+reverseStr("hello world") // dlrow olleh
