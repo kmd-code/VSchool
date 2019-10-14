@@ -1,0 +1,91 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+    background-color: lightgray;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    /* border: 2px solid black; */
+    background-color: white;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.gInfo > input {
+    width: 350px;
+    height: 34px;
+    border: none;
+    text-indent: 10px;
+    font-size: 18px;
+}
+
+h2 {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 10px;
+    font-size: 24px;
+}
+
+button {
+    height: 34px;
+    margin-top: 10px;
+    border: none;
+    background-color: white;
+    font-size: 24px;
+}
+
+button:hover {
+    background-color: green;
+    color: white;
+    transition: .75s ease all;
+}
+
+
+/* GENDERS STYLING */
+.genders {
+    display: inline-flex;
+    justify-content: space-evenly;
+    padding: 10px 10px;
+}
+
+.genders > p {
+    font-size: 16px;
+}
+
+.genders > p > input {
+    margin: 5px;
+}
+
+/* LOCATION STYLING */
+.locations > select {
+    width: 330px;
+    height: 24px;
+    font-size: 16px;
+    margin: 5px 10px;
+}
+
+
+/* DIET STYLING */
+.dietary > p {
+    display: inline-flex;
+    width: 173px;
+    flex-wrap: wrap;
+    font-size: 16px;
+    align-items: baseline;
+    height: 24px;
+}
+
+.dietary > p > input {
+    margin: 10px;
+}
