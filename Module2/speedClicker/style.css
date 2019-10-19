@@ -1,0 +1,37 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-family: 'Mansalva', cursive;
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url("assets/104972.jpg");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.gameContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+    /* border: 3px solid black; */
+    width: 35vw;
+    height: 50vh;
+    border-radius: 10px;
+    margin: 10%;
+    padding: 2%;
+
+    background-color: white;
+}
+
+h2 {
+    font-size: 34px;
+}

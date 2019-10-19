@@ -1,0 +1,132 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: 'Mansalva', cursive;
+    background-image: url("https://i.pinimg.com/originals/dc/8d/ef/dc8def609c27f9123c4f61a83a3b93bd.jpg");
+    background-position: center;
+    background-size: auto;
+    width: 100vw;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-evenly;
+    height: 35px;
+    background-color: red;
+    align-items: center;
+}
+
+footer > p {
+    margin-bottom: 5px;
+}
+
+footer > p:hover {
+    color: white;
+    cursor: pointer;
+}
+
+footer > p > i {
+    margin: 10px;
+}
+
+header {
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: 100%;
+    height: 90px;
+
+    font-size: 36px;
+    background-color: red;
+}
+
+img {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    background: black;
+    border: 5px solid gold;
+}
+
+img:hover {
+    border: 5px solid green;
+    transition: 0.5s ease all;
+}
+
+.clicked {
+    background: green;
+}
+
+
+form {
+    width: 400px;
+    background-color: rgba(255, 0, 0, 0.8);
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+main {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+input {
+    background: none;
+    border: none;
+    font-size: 30px;
+    width: 33%;
+    height: 32px;
+    border-bottom: 3px solid gold;
+    text-align: center;
+    color: gold;
+}
+
+input::placeholder {
+    color: gold;
+    text-align: center;
+}
+
+h2 {
+    margin: 10px;
+    text-align: center;
+}
+
+.goombas {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10px 0px 5px 0px;
+}
+
+.bobOmbs {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10px 0px 5px 0px;
+}
+
+.cheepCheeps {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10px 0px 5px 0px;
+}
+
+.total {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 20px 10px 0px;
+    font-size: 20px;
+}
+
+#totalCoins {
+    color: gold;
+}
