@@ -1,0 +1,79 @@
+body {
+    width: 100vw;
+    height: 1000px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.boxContainer {
+    width: 75vw;
+    height: 500px;
+    display: flex;
+
+}
+
+.box {
+    width: 25%;
+    height: 25%;
+    background-color: red;
+    display: inline-flex;
+    margin: 10px;
+}
+
+.box1 {
+    background-color: blue;
+    transition: background-color 1s linear;
+}
+
+.box1:hover {
+    background-color: red;
+}
+
+.box2 {
+    background-color: yellow;
+    transition: border 2s ease-in-out;
+}
+
+.box2:hover {
+    border: 5px solid black;
+}
+
+.box3 {
+    background-color: green;
+    transition: border-radius 1s linear;
+}
+
+.box3:hover {
+    border-radius: 50%;
+}
+
+.box4 {
+    background-color: red;
+    transition: height 1s linear, width 1s linear;
+}
+
+.box4:hover {
+    width: 30%;
+    height: 30%;
+}
+
+.box5 {
+    background-color: purple;
+    transition: opacity 3s linear;
+}
+
+.box5:hover {
+    opacity: 0;
+}
+
+.box6 {
+    background-color: orange;
+    transition: box-shadow 2s ease, background-image 2s ease;
+}
+
+.box6:hover {
+    background-image: url("https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?ixlib=rb-1.2.1&w=1000&q=80");
+    background-size: cover;
+    box-shadow: 5px 10px;
+}

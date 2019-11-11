@@ -129,4 +129,4 @@ console.log(voterResults(voters)); // Returned value shown below:
   mids: 4,
   oldVotes: 3,
   olds: 4 
-}
+} */

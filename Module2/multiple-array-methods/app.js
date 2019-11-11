@@ -1,10 +1,5 @@
-function sortedOfAge(arr){
-    
- }
- 
- console.log(sortedOfAge(peopleArray));
 
-
+// people older than 18 = filterArray, then sort to sortedArray,
  var peopleArray = [
     {
         firstName: "Sarah",
@@ -42,3 +37,13 @@ function sortedOfAge(arr){
         age: 82
     }
 ]
+
+function sortedOfAge(arr){
+    const filterArr = arr.filter(people => people.age >= 18);
+    const sortedArr = filterArr.sort((a, b) => a.lastName.localeCompare(b.lastName));
+    // found localeCompare() - determines if a string comes before or after its comparison in a sort (returns 1, 0 or -1)
+
+    return sortedArr.map((person) => `<li>${person.firstName} ${person.lastName} is ${person.age} years old.</li>`)
+ }
+ 
+ console.log(sortedOfAge(peopleArray));
