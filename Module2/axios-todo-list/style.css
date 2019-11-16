@@ -1,0 +1,50 @@
+
+
+.flexCont {
+    display: flex;
+    width: 50vw;
+    
+}
+
+img {
+    width: 75px;
+    height: 75px;
+}
+
+#todoList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div > button {
+    transform: rotate(90deg);
+}
+
+#todoList > div {
+    display: grid;
+    grid-template-columns: 20px 300px 50px auto 100px 30px;
+    width: 70%;
+    height: 75px;
+    align-items: center;
+    justify-items: center;
+    padding-top: 15px;
+}
+
+#todoList > div > h2 {
+    font-size: 20px;
+    text-orientation: sideways;
+}
+
+.true {
+    text-decoration: line-through;
+}
+
+

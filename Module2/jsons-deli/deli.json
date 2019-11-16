@@ -1,0 +1,64 @@
+{
+    "appetizers": [
+        {
+            "name": "Deep Fried Pickles",
+            "ingredients": ["pickles", "flour", "peanut oil", "egg", "cajun seasoning"],
+            "description": "Think of wavy lays, except these bad boys are savory, and bursting with cajun flavor!"
+        },
+        {
+            "name": "Onion Rings",
+            "ingredients": ["onion", "flour", "peanut oil", "egg", "jamaican jerk seasoning"],
+            "description": "This isn't your mommas recipe, it's the onion ring, but with a jamaican twist!"
+        }
+    ],
+    "coldSandwiches": [
+        {
+            "name": "Classic Cold Cut",
+            "ingredients": ["customer choice bread", "ham", "turkey", "beef", "spicy mustard", "mayo"],
+            "description": "Sure, you could make this at home. But we do it better, and it tastes nicer when someone else makes it."
+        },
+        {
+            "name": "The TBA",
+            "ingredients": ["focaccia", "house sauce", "provolone", "turkey", "bacon", "avocado", "lettuce", "tomato", "onion", "salt and pepper"],
+            "description": "The Turkey Bacon Avocado is a sandwich that we ripped off straight from Kneaders. But ours is better!"
+        }
+    ],
+    "hotSandwiches": [
+        {
+            "name": "Chicken Cheese and Ham",
+            "ingredients": ["ciabatta", "mayo", "honey mustard", "chicken", "cheese", "ham", "lettuce", "tomato", "onion"],
+            "description": "This is probably the best sandwich that you'll ever taste. Savory Chicken, grilled ham, and melted cheese. All with a little bit of sweet from that honey mustard."
+        },
+        {
+            "name": "Turkey Artichoke",
+            "ingredients": ["focaccia", "mayo", "turkey", "mozzerella", "spinach", "tomato", "onion"],
+            "description": "This one is a savory sandwich through and through, with a little kick from the artichokes, you'll enjoy whats happening on your tastebudes every bite."
+        }
+
+    ],
+    "desserts": [
+        {
+            "name": "Key Lime Pie",
+            "ingredients": ["egg", "lime", "concentrated milk", "flour", "water"],
+            "description": "This is 100% tart, and 110% the best key lime this side of the equator"
+        },
+        {
+            "name": "Chocolate Chip Cookie",
+            "ingredients": ["chocolate", "flour", "water", "salt", "sugar", "egg"],
+            "description": "It's a chocolate chip cookie, some people like to keep things simple, and we do too."
+        }
+
+    ],
+    "drinks": [
+        {
+            "name": "Mountain Dew",
+            "ingredients": ["some concotion of chemicals", "caffeine"],
+            "description": "Mt Dew is the only soda worth drinking"
+        },
+        {
+            "name": "Water",
+            "ingredients": ["H", "2", "O"],
+            "description": "We offer water, for the people who don't think Mt Dew is the only soda worth drinking"
+        }
+    ]
+}
