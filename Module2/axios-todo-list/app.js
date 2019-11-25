@@ -25,7 +25,7 @@ todo.addEventListener("submit", event => {
     todo.imgURL.value = "";
 
     axios.post("https://api.vschool.io/kduvall/todo", newTodo)
-        .then(res => getData())
+        .then(getData)
         .catch(err => console.log(err))
 })
 
@@ -42,12 +42,8 @@ createTodos = (data) => {
         checkbox = document.createElement("input");
         checkbox.type = "checkbox";
         checkbox.className = "checkbox";
-        checkbox.label = "todo"
-        if (data[i].completed === false){
-            checkbox.checked = false;
-        } else {
-            checkbox.checked = true;
-        };
+        checkbox.label = "todo";
+        checkbox.checked = data[i].completed;
 
         price.textContent = `$${data[i].price}`;
         title.textContent = data[i].title;
@@ -64,7 +60,6 @@ createTodos = (data) => {
         div.appendChild(image);
 
         todo.appendChild(div);
-
     }
     addButtons();
 }
@@ -96,7 +91,7 @@ addButtons = () => {
         delBtns[i].addEventListener("click", () => {
             const id = delBtns[i].parentElement.id;
             axios.delete(`https://api.vschool.io/kduvall/todo/${id}`)
-                .then(res => getData())
+                .then(getData)
                 .catch(err => console.log(err))
          })
     }
@@ -106,14 +101,12 @@ addButtons = () => {
         checkboxes[i].addEventListener("click", () => {
             const id = checkboxes[i].parentElement.id;
             if(checkboxes[i].checked === true) {
-                checkboxes[i].checked === true;
                 axios.put(`https://api.vschool.io/kduvall/todo/${id}`, {"completed": true})
-                    .then(() => getData())
+                    .then(getData)
                     .catch(err => console.log(err))
             } else {
-                checkboxes[i].checked === false;
                 axios.put(`https://api.vschool.io/kduvall/todo/${id}`, {"completed": false})
-                    .then(() => getData())
+                    .then(getData)
                     .catch(err => console.log(err))
             }
             
