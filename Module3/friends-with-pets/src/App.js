@@ -1,5 +1,4 @@
 import React from "react"
-// import Pet from "./components/Pet"
 import FriendList from "./components/FriendList"
 import friendArr from "./friendArray"
 
