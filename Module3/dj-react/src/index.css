@@ -1,0 +1,37 @@
+.square {
+    width: 200px;
+    height: 200px;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: repeat(2, 200px);
+    grid-gap: 10px;
+}
+
+html {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: gray;
+}
+
+.button {
+    grid-column: 1 / -1;
+    height: 40px;
+}
+
+.button:hover {
+    background-color: red;
+    color: white;
+}
+
+.splitButton {
+    height: 40px;
+}
+
+.splitButton:hover {
+    background-color: red;
+    color: white;
+}
