@@ -36,7 +36,7 @@ h1 {
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin: 20px;
-  background: rgba(73, 20, 196, 0.527);
+  /* background: rgba(73, 20, 196, 0.527); */
   border-radius: 5px;
 }
 

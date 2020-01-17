@@ -6,7 +6,8 @@ class App extends Component {
     super()
     this.state = {
       isLoading: false,
-      hitList: []
+      hitList: [],
+      color: ''
     }
   }
 
@@ -21,11 +22,12 @@ class App extends Component {
           hitList: data
         })
       })
-  }
+   }
+  
 
   render() {
     const namePlateComp = this.state.hitList.map(item => {
-      return <NamePlate name={item.name} image={item.image} />
+      return <NamePlate name={item.name} image={item.image}/>
     })
     return (
       <div>
