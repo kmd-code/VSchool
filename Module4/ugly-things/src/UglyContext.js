@@ -14,17 +14,13 @@ class UglyThingsProvider extends Component {
         })
     }
 
-    editThing = (editItem) => {
-        this.setState({
-            title: editItem.title,
-            url: editItem.url,
-            desc: editItem.desc
-        })
+    editItem = () => {
+        console.log("this was clicked")
     }
 
     render() {
         return (
-            <Provider value={{items: this.state.uglythings, submitItem: this.submitItem}}>
+            <Provider value={{items: this.state.uglythings, submitItem: this.submitItem, editItem: this.editItem}}>
                 {this.props.children}
             </Provider>
         )

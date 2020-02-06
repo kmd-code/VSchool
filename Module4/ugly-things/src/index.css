@@ -1,0 +1,54 @@
+.uglyThing {
+    width: 250px;
+    background: lightpink;
+    height: 250px;
+    margin: 15px;
+    text-align: center;
+    border: 2px solid black;
+    overflow: hidden;
+}
+
+.uglyContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.uglyThing > input {
+    width: 80%;
+    height: 20px;
+    margin: 10px;
+}
+
+.uglyThing > button {
+    width: 50%;
+    height: 25px;
+}
+
+img {
+    max-width: 100%;
+    border-top: 2px solid black; 
+}
+
+form {
+    height: 120px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background: lightsalmon;
+    padding: 10px;
+}
+
+form > p {
+    font-size: 12px;
+}
+
+input {
+    width: 25%;
+}
+
+button {
+    width: 15%;
+}

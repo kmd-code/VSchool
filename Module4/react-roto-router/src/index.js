@@ -1,15 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.css';
 import App from './App';
-import {UglyThingsProvider} from './UglyContext'
-import './index.css'
-
+import {BrowserRouter as Router} from "react-router-dom"
 
 ReactDOM.render(
-    <UglyThingsProvider>
+    <Router>
         <App />
-    </UglyThingsProvider>, 
+    </Router>, 
     document.getElementById('root')
 );
 
-
+ 

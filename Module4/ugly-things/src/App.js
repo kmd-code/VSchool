@@ -20,7 +20,9 @@ class App extends Component {
           return (
             <div>
               <UglyForm submitItem={context.submitItem}/>
-              {UglyStuff}
+              <div className="uglyContainer">
+                {UglyStuff}
+              </div>
             </div>
           )}}
         </UglyThingsConsumer>

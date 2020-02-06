@@ -1,0 +1,73 @@
+html {
+  background-color: #D3D5D4;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2D3142;
+  color: #D3D5D4;
+  height: 10vh;
+}
+
+footer {
+  background-color: #2D3142;
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer > div {
+  width: 40%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.icon {
+  font-size: 50px;
+  padding-top: 10px;
+}
+
+h2 {
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+.links {
+  display: flex;
+  justify-content: space-around;
+  width: 35%;
+}
+
+a {
+  text-decoration: none;
+  text-align: center;
+  color: #D3D5D4;
+  height: 100%;
+  width: 100%;
+}
+
+a:hover {
+  background: #EF8354;
+}
+
+.body {
+  background-image: url("https://images.freeimages.com/images/large-previews/243/some-conduit-and-plumbing-inside-the-5th-avenue-bar-in-d-troit-1254239.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 80vh;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.body > h1 {
+  color: #D3D5D4;
+  font-size: 64px;
+  padding-left: 80px;
+}
+
