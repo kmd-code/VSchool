@@ -1,27 +1,47 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import {useParams} from 'react-router-dom'
+import axios from 'axios'
+import {PokeFavs} from '../context/PokeFavs'
 
 function PokeDetail(props) {
+    const favs = useContext(PokeFavs)
     const {pokeId} = useParams()
-    const [pokeDetail, setPokeDetail] = useState()
+    const [pokeInfo, setPokeInfo] = useState({})
 
     useEffect(() => {
-        const axios = require('axios')
         axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeId}`)
             .then(resp => {
-                setPokeDetail(() => resp.data)
-                console.log('API call made')
+                setPokeInfo(() => resp.data)
             })
             .catch(error => console.log(error))
     }, [pokeId])
 
-    console.log(pokeDetail)
+    function getSafe(fn, defaultVal) {
+        try {
+            return fn();
+        } catch (e) {
+            return defaultVal;
+        }
+    }
+    
+    if (pokeInfo) {
+        return (
+            <div>
+                <img alt="Front View" src={getSafe(() => pokeInfo.sprites.front_default)}/>
+                <button onClick={() => favs.addFav(getSafe(() => pokeInfo.id))}>Favorite</button>
+                <h1>{getSafe(() => pokeInfo.name)}</h1>
+                <h2>Height: {getSafe(() => pokeInfo.height)}</h2>
+                <h2>Weight: {getSafe(() => pokeInfo.weight)}</h2>
+            </div>
+        )
+    } else {
+        return (
+            <div>
+                <h2>Loading...</h2>
+            </div>
+        )
+    }
 
-    return (
-        <div>
-            <h1></h1>
-        </div>
-    )
 }
 
 export default PokeDetail
