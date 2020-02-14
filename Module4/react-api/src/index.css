@@ -1,8 +1,10 @@
 /* 
 Pokemon Colors
-Yellow: rgb(255,203,5)
-Blue: rgb(61,125,202)
-Navy Blue: rgb(0,58,112)
+Red: rgb(255,0,0)
+Boston Red: rgb(204,0,0)
+Cerulean Blue: rgb(59,76,202)
+Golden Yellow: rgb(255,222,0)
+Gold Foil: rgb(179,161,37)
 
 Font: https://fonts.googleapis.com/css?family=Sigmar+One
 
@@ -11,6 +13,115 @@ Font: https://fonts.googleapis.com/css?family=Sigmar+One
 
 body {
   margin: 0;
+  font-family: 'Sigmar One', cursive;
+}
+
+.largestContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: rgb(245,245,245);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+}
+
+.pokeTile {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 32.135%;
+  height: 15%;
+  font-size: 24px;
+  text-align: center;
+  margin: .60%;
+  text-decoration: none;
+  color: rgb(255,222,0);
+  background: rgb(245,245,245);
+  box-shadow: -1px 1px 3px black;
+  border-radius: 6px;
+
+  text-shadow:
+		-1px -1px 0 rgb(59,76,202),
+		1px -1px 0 rgb(59,76,202),
+		-1px 1px 0 rgb(59,76,202),
+		1px 1px 0 rgb(59,76,202);
+}
+
+.pokeDisplay {
+  display: flex;
+  flex-wrap: wrap;
+  height: 50vh;
+  overflow-y: scroll;
+  scroll-behavior: ;
+  width: 75%;
+  padding: 2%;
+  box-sizing: border-box;
+  border-radius: 6px;
+  border: 3px solid rgb(204,0,0);
+  box-shadow: -2px 2px 3px black;
+  background-color: rgb(204,0,0);
+}
+
+header, footer {
+  display: inline-block;
+  background-color: rgb(204,0,0);
+  height: 8vh;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+
+header {
+  padding: 5px 20px;
+  font-size: 28px;
+  width: 100vw;
   
+}
+
+header > div {
+  display: flex;
+  justify-content: space-around;
+  width: 25%;
+}
+
+header > div > a {
+  text-decoration: none;
+}
+
+.searchCont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 75%;
+  align-items: center;
+}
+
+.searchCont > input {
+  width: 60%;
+  font-size: 24px;
+  font-family: 'Sigmar One', cursive;
+  border-radius: 6px;
+  background-image: url('./pokeball.png');
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-position-x: 5px;
+  padding-left: 40px;
+}
+
+.searchCont > h1 {
+  width: 100%;
+  text-align: center;
 }
 

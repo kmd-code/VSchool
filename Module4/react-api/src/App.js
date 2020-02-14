@@ -9,7 +9,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 
 function App() {
-  const [pokeData, setPokeData] = useState([])
+  const [pokeData, setPokeData] = useState()
 
   useEffect(() => {
     axios.get('https://pokeapi.co/api/v2/pokemon', {params: {
@@ -23,11 +23,11 @@ function App() {
   }, [])
 
   return (
-    <div>
+    <div className='largestContainer'>
       <Header />
       <Switch>
         <Route exact path='/'>
-          <Home data={pokeData} />
+          {pokeData && <Home data={pokeData} />}
         </Route>
         <Route exact path='/favorites'>
           <Favorites />

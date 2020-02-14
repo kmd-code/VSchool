@@ -28,10 +28,15 @@ function PokeDetail(props) {
         return (
             <div>
                 <img alt="Front View" src={getSafe(() => pokeInfo.sprites.front_default)}/>
-                <button onClick={() => favs.addFav(getSafe(() => pokeInfo.id))}>Favorite</button>
-                <h1>{getSafe(() => pokeInfo.name)}</h1>
-                <h2>Height: {getSafe(() => pokeInfo.height)}</h2>
-                <h2>Weight: {getSafe(() => pokeInfo.weight)}</h2>
+                <button onClick={() => favs.addFav({
+                        name: getSafe(() => pokeInfo.name),
+                        sprite: getSafe(() => pokeInfo.sprites.front_default)
+                    }
+                )}>Favorite</button>
+                <h1>{getSafe(() => pokeInfo.name.toUpperCase())}</h1>
+                <p>HEIGHT: {getSafe(() => pokeInfo.height)}</p>
+                <p>WEIGHT: {getSafe(() => pokeInfo.weight)}</p>
+                <p>TYPE: {getSafe(() => pokeInfo.types[0].type.name.toUpperCase())}</p>
             </div>
         )
     } else {
