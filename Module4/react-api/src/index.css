@@ -32,6 +32,15 @@ body {
   height: 100vh;
 }
 
+.container > h1 {
+  color: rgb(255,222,0);
+  text-shadow:
+		-1px -1px 0 rgb(59,76,202),
+		1px -1px 0 rgb(59,76,202),
+		-1px 1px 0 rgb(59,76,202),
+		1px 1px 0 rgb(59,76,202);
+}
+
 .pokeTile {
   display: flex;
   justify-content: space-around;
@@ -42,11 +51,11 @@ body {
   text-align: center;
   margin: .60%;
   text-decoration: none;
-  color: rgb(255,222,0);
   background: rgb(245,245,245);
   box-shadow: -1px 1px 3px black;
   border-radius: 6px;
 
+  color: rgb(255,222,0);
   text-shadow:
 		-1px -1px 0 rgb(59,76,202),
 		1px -1px 0 rgb(59,76,202),
@@ -54,12 +63,22 @@ body {
 		1px 1px 0 rgb(59,76,202);
 }
 
+.pokeTile:hover {
+  transition: all .2s linear;
+
+  color: rgb(179,161,37);
+  text-shadow:
+		-1px -1px 0 rgb(0,0,0),
+		1px -1px 0 rgb(0,0,0),
+		-1px 1px 0 rgb(0,0,0),
+		1px 1px 0 rgb(0,0,0);
+}
+
 .pokeDisplay {
   display: flex;
   flex-wrap: wrap;
   height: 50vh;
   overflow-y: scroll;
-  scroll-behavior: ;
   width: 75%;
   padding: 2%;
   box-sizing: border-box;
@@ -68,6 +87,136 @@ body {
   box-shadow: -2px 2px 3px black;
   background-color: rgb(204,0,0);
 }
+
+.pokeDetail {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50vh;
+  width: 75%;
+  padding: 2%;
+  box-sizing: border-box;
+  border-radius: 6px;
+  border: 3px solid rgb(204,0,0);
+  box-shadow: -2px 2px 3px black;
+  background-color: rgb(204,0,0);
+}
+
+.pokeDetail > .poke {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+
+  height: 100%;
+  width: 40%;
+}
+
+.pokeDetail > .poke > img {
+  width: 100%;
+}
+
+.pokeDetail > .title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 60%;
+}
+
+.pokeDetail > .title > h1 {
+  color: rgb(255,222,0);
+  font-size: 32px;
+  text-shadow:
+		-1px -1px 0 rgb(59,76,202),
+		1px -1px 0 rgb(59,76,202),
+		-1px 1px 0 rgb(59,76,202),
+		1px 1px 0 rgb(59,76,202);
+}
+
+.pokeDetail > .title > p {
+  color: rgba(245,245,245, .9);
+  font-size: 16px;
+}
+
+.pokeDetail > .title > .detailBtns {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.pokeDetail > .title > div > .detailBtn {
+  width: 30%;
+  align-self: center;
+  font-size: 18px;
+  font-family: 'Sigmar One', cursive;
+  padding: 1px;
+  text-align: center;
+  text-decoration: none;
+  background: rgba(245,245,245, .9);
+  box-shadow: -1px 1px 3px black;
+  border-radius: 6px;
+
+  color: rgb(255,222,0);
+  text-shadow:
+		-1px -1px 0 rgb(59,76,202),
+		1px -1px 0 rgb(59,76,202),
+		-1px 1px 0 rgb(59,76,202),
+		1px 1px 0 rgb(59,76,202);
+}
+
+.pokeDetail > .title > div > .detailBtn:hover {
+  transition: all .2s linear;
+  cursor: pointer;
+
+  color: rgb(179,161,37);
+  text-shadow:
+		-1px -1px 0 rgb(0,0,0),
+		1px -1px 0 rgb(0,0,0),
+		-1px 1px 0 rgb(0,0,0),
+		1px 1px 0 rgb(0,0,0);
+}
+
+.pokeCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: .25%;
+  background-color: rgba(245,245,245, .9);
+  box-shadow: -2px 2px 3px black;
+  color: rgb(255,222,0);
+  text-shadow:
+		-1px -1px 0 rgb(59,76,202),
+		1px -1px 0 rgb(59,76,202),
+		-1px 1px 0 rgb(59,76,202),
+    1px 1px 0 rgb(59,76,202);
+  text-decoration: none;
+  font-size: 18px;
+
+  width: 17.5%;
+  height: 50%;
+  margin: 1%;
+  border-radius: 6px;
+}
+
+.pokeCard > img {
+  padding-top: 5%;
+  width: 100%;
+}
+
+.pokeCard:hover {
+  transition: all .2s linear;
+
+  color: rgb(179,161,37);
+  text-shadow:
+		-1px -1px 0 rgb(0,0,0),
+		1px -1px 0 rgb(0,0,0),
+		-1px 1px 0 rgb(0,0,0),
+		1px 1px 0 rgb(0,0,0);
+}
+
 
 header, footer {
   display: inline-block;
@@ -97,6 +246,24 @@ header > div {
 
 header > div > a {
   text-decoration: none;
+
+  color: rgb(255,222,0);
+  text-shadow:
+		-1px -1px 0 rgb(59,76,202),
+		1px -1px 0 rgb(59,76,202),
+		-1px 1px 0 rgb(59,76,202),
+		1px 1px 0 rgb(59,76,202);
+}
+
+header > div > a:hover {
+  transition: all .2s linear;
+
+  color: rgb(179,161,37);
+  text-shadow:
+		-1px -1px 0 rgb(0,0,0),
+		1px -1px 0 rgb(0,0,0),
+		-1px 1px 0 rgb(0,0,0),
+		1px 1px 0 rgb(0,0,0);
 }
 
 .searchCont {
@@ -123,5 +290,13 @@ header > div > a {
 .searchCont > h1 {
   width: 100%;
   text-align: center;
+  font-size: 50px;
+
+  color: rgb(255,222,0);
+  text-shadow:
+		-1px -1px 0 rgb(59,76,202),
+		1px -1px 0 rgb(59,76,202),
+		-1px 1px 0 rgb(59,76,202),
+		1px 1px 0 rgb(59,76,202);
 }
 

@@ -26,7 +26,7 @@ function Home(props) {
         }
         setFiltered(() => newPokeList)
     }
-
+ 
     return (
         <div className="container">
         <div className="searchCont">

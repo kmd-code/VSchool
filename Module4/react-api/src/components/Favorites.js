@@ -6,19 +6,19 @@ function Favorites(props) {
 
     const pokeFavDisp = pokeFavs.map(poke => {
         return (
-            <Link to={`/pokemon/${poke.name}`} >
-            <div className='pokeCard' key={poke.id}>
+            <Link className='pokeCard' key={poke.name} to={`/pokemon/${poke.name}`} >
                 <img alt={poke.name} src={poke.sprite} />
                 <p>{poke.name.toUpperCase()}</p>
-            </div>
             </Link>
         )
     })
 
     return (
-        <div>
+        <div className='container'>
             <h1>Your current Favorites: </h1>
-            {pokeFavDisp}
+            <div className='pokeDisplay'>
+                {pokeFavDisp}
+            </div>
         </div>
     )
 }
