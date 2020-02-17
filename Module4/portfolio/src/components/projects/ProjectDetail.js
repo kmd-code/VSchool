@@ -12,7 +12,7 @@ function ProjectDetail(props) {
             <div className="projectContainer">
                 <img alt={thisProject.thumbnail} src={thisProject.thumbnail}/>
                 <h1>{thisProject.title}</h1>
-                <h3>{thisProject.url}</h3>
+                <h3><a target="_blank" rel="noopener noreferrer" href={thisProject.url}>{thisProject.url}</a></h3>
                 <h3>Built with: {thisProject.languages}</h3>
                 <p>{thisProject.description}</p>
                 <br />

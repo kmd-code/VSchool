@@ -36,6 +36,7 @@ body {
 .projectCard {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   width: 96%;
   margin-top: 1.5%;
   margin-left: 1.5%;
@@ -113,6 +114,7 @@ body {
 }
 
 .aboutContainer {
+  width: 96%;
   background: rgba(0,0,0,.7);
   color: #F5F0F6;
   margin: 4%;
@@ -131,7 +133,6 @@ body {
 
 .downloadContainer {
   display: flex;
-  width: 96%;
   justify-content: space-around;
 }
 
@@ -203,6 +204,14 @@ a:hover {
     font-size: 30px;
   }
 
+  .aboutContainer {
+    width: 80%;
+  }
+
+  .downloadContainer {
+    width: 40%;
+  }
+
   .projectContainer > img {
     width: 65%;
     margin-left: auto;
@@ -228,6 +237,7 @@ a:hover {
   }
 
   .projectCard {
+    flex-direction: row;
     width: 80%;
     margin-left: auto;
     margin-right: auto;

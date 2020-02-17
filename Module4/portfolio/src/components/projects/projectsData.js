@@ -1,18 +1,11 @@
 export default [
     {
-        "title": "React API",
-        "languages": "React, JavaScript, HTML, CSS",
+        "title": "PokeMon API Project",
+        "languages": "React, React Router, Axios, JavaScript, HTML, CSS",
         "_id": "1",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tristique rutrum felis, ut maximus lorem gravida vel. Nulla nec mi tempor, vulputate sapien in, rhoncus neque. Aliquam condimentum commodo porttitor. Sed aliquam ex vel ligula convallis tempor. Phasellus vestibulum nunc sem, a congue nisi ultricies vel. Nulla pretium nunc turpis, sit amet fringilla ligula tempor in. In imperdiet dui sed nisl volutpat hendrerit. In in ex in lectus maximus fringilla. Nulla faucibus sed massa sed fermentum. Praesent malesuada tellus sed consequat convallis. Pellentesque euismod purus feugiat massa finibus, ac tincidunt purus lacinia.",
-        "thumbnail": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
-        "url": "thisisatesturl.com"
+        "description": "I built this project to demonstrate a basic understanding of React. It utilizes new processes, such as being built without using any class based components, and using strictly hooks. React Router is responsible for the routing on the page. The API is providing all the data for the names, sprites, and basic information for each pokemon. When the pokemon is saved into favorites, it saves into localStorage - which the favorites page then parses back out to map over and display the tiles. The search bar takes the array of objects and searches by character, gradually narrowing down the results each time the page re-renders. This project was definitely a challenge to code, and was fun along the way - I was able to learn a lot, and implement the lessons I learned in my React unit as well.",
+        "thumbnail": "https://i.imgur.com/gjEuxhn.png",
+        "url": "https://kaydonpoke.surge.sh"
     },
-    {
-        "title": "React API",
-        "languages": "React, JavaScript, HTML, CSS",
-        "_id": "2",
-        "description": "Lorem ipsum",
-        "thumbnail": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
-        "url": "testurl.com"
-    }
+    
 ]

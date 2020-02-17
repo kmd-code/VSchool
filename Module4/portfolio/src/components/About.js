@@ -1,6 +1,5 @@
 import React from 'react'
 import me from './assets/me.jpg'
-import resume from './assets/resume.pdf'
 
 
 
@@ -13,9 +12,7 @@ function About(props){
                 <br />
                 <p>I started working at a young age, and I still haven't stopped. Growing up with positive role models to look up to I've developed a strong work ethic, and typically won't stop something until I finish it. I also am a competitive person, pushing myself against others is something that has helped me thrive in whatever environment I end up in. I enjoy being part of a team, the culture of it, the competition of it, and the success you always have because of everyone lifting each other up. As they say, "Teamwork makes the dream work"</p>
             </div>
-                <div className="aboutContainer downloadContainer">
-                    <a href={resume} download='KDResume' className='downloadResume'>Download Resume</a>
-                </div>
+                
             
         </div>
     )
