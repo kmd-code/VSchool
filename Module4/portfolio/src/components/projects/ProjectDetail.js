@@ -10,7 +10,7 @@ function ProjectDetail(props) {
     return (
         <div className="content project">
             <div className="projectContainer">
-                <img alt={thisProject.thumbnail} src={thisProject.thumbnail}/>
+                <a target="_blank" rel="noopener noreferrer" href={thisProject.url}><img alt={thisProject.thumbnail} src={thisProject.thumbnail}/></a>
                 <h1>{thisProject.title}</h1>
                 <h3><a target="_blank" rel="noopener noreferrer" href={thisProject.url}>{thisProject.url}</a></h3>
                 <h3>Built with: {thisProject.languages}</h3>
