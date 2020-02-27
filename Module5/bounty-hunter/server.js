@@ -1,47 +1,25 @@
 const express = require('express')
 const app = express()
-const uuid = require('uuid/v4')
+const mongoose = require('mongoose')
+const morgan = require('morgan')
 
 //Middleware
 app.use(express.json())
+app.use(morgan('dev'))
 
-
-//Fake Data
-let bounties = [
+mongoose.connect('mongodb://localhost:27017/bounty-hunter',
     {
-        firstName: "Boba",
-        lastName: "Fett",
-        living: true,
-        bounty: 150000000,
-        type: 'Sith',
-        _id: uuid()
-    }
-]
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useCreateIndex: true,
+        useFindAndModify: false
+    },
+    () => console.log("Connected to bounty-hunter database")
+)
 
 //Routes
-app.get('/bounties', (req, res) => {
-    res.send(bounties)
-})
+app.use('/bounties', require('./routes/bountyRouter.js'))
+app.use('/users', require('./routes/killRouter.js'))
 
-app.post('/bounties', (req, res) => {
-    const newBounty = req.body
-    newBounty._id = uuid()
-    bounties.push(newBounty)
-    res.send(bounties)
-})
-
-app.delete('/bounties/:bountyId', (req, res) => {
-    let bountyId = req.params._id
-    let bountyIndex = bounties.findIndex(bounty => bounty._id === bountyId)
-    bounties.splice(bountyIndex, 1)
-    res.send(bounties)
-})
-
-app.put('/bounties/:bountyId', (req, res) => {
-    let bountyId = req.params.bountyId
-    let bountyIndex = bounties.findIndex(bounty => bounty._id === bountyId)
-    let updatedBounties = Object.assign(bounties[bountyIndex], req.body)
-    res.send(updatedBounties)
-})
 
 app.listen(9000, () => console.log("The server is running on port 9000"))
