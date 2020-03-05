@@ -12,6 +12,15 @@ userRouter.get('/', (req, res, next) => {
     })
 })
 
+userRouter.get('/:userId', (req, res, next) => {
+    User.findOne((err, user) => {
+        if(err) {
+            res.status(500)
+            next(err)
+        }
+    })
+})
+
 userRouter.post('/', (req, res, next) => {
     const newUser = new User(req.body)
     newUser.save((err, savedUser) => {

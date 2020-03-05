@@ -8,7 +8,7 @@ import PokeDetail from './components/PokeDetail'
 import Header from './components/Header'
 import Footer from './components/Footer'
 
-function App() {
+function App() { 
   const [pokeData, setPokeData] = useState()
 
   useEffect(() => {

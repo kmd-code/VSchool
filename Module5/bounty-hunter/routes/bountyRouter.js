@@ -7,7 +7,7 @@ const Bounty = require('../models/bounty.js')
 bountyRouter.get('/', (req, res, next) => {
     Bounty.find((err, bounties) => {
         if(err){
-            res.status(500)
+            res.status(500) 
             return next(err)
         } 
         return res.status(200).send(bounties)
