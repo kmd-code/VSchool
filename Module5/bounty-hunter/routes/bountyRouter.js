@@ -14,35 +14,55 @@ bountyRouter.get('/', (req, res, next) => {
     })
 })
 
-// bountyRouter.get('/:bountyId', (req, res) => {
-//     const bountyId = req.params.bountyId
-//     const foundBounty = bounties.find(bounty => bounty._id === bountyId)
-//     res.send(foundBounty)
-// })
+bountyRouter.get('/:bountyId', (req, res, next) => {
+    Bounty.findById(
+        req.params.bountyId,
+        (err, bounty) => {
+            if(err){
+                res.status(500)
+                return next(err)
+            }
+            return res.status(201).send(bounty)
+        }
+    )
+})
 
 bountyRouter.post('/', (req, res, next) => {
     const newBounty = new Bounty(req.body)
     newBounty.save((err, savedBounty) => {
         if(err){
-            res.status(201)
+            res.status(500)
             return next(err)
         }
         return res.status(201).send(savedBounty)
     })
 })
 
-// bountyRouter.delete('/:bountyId', (req, res) => {
-//     let bountyId = req.params._id
-//     let bountyIndex = bounties.findIndex(bounty => bounty._id === bountyId)
-//     bounties.splice(bountyIndex, 1)
-//     res.send(bounties)
-// })
+bountyRouter.delete('/:bountyId', (req, res, next) => {
+    Bounty.findOneAndDelete(
+        {_id: req.params.bountyId},
+        (err, deletedItem) => {
+            if(err){
+                res.status(500)
+                return next(err)
+            }
+            return res.status(200).send(`Successfully deleted item: ${deletedItem.firstName} ${deletedItem.lastName}`)
+    })
+})
 
-// bountyRouter.put('/:bountyId', (req, res) => {
-//     let bountyId = req.params.bountyId
-//     let bountyIndex = bounties.findIndex(bounty => bounty._id === bountyId)
-//     let updatedBounties = Object.assign(bounties[bountyIndex], req.body)
-//     res.send(updatedBounties)
-// })
+bountyRouter.put('/:bountyId', (req, res, next) => {
+    Bounty.findOneAndUpdate(
+        {_id: req.params.bountyId},
+        req.body,
+        {new: true},
+        (err, updatedBounty) => {
+            if(err) {
+                res.status(500)
+                return next(err)
+            }
+            return res.status(201).send(updatedBounty)
+        }
+    )
+})
 
 module.exports = bountyRouter
