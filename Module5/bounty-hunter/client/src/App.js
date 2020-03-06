@@ -1,28 +1,45 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import axios from 'axios'
-import styled from '@emotion/styled'
 
-const BountyContainer = styled('div')`
-    height: 450px;
-    width: 600px;
-    margin: auto;
-    background-color: #ffffff;
-    box-shadow:0px 0px 3px 1px grey;
-    padding: 10px;
-`
-BountyContainer.displayName = 'BountyContainer'
+import Header from './components/Header'
+import Display from './components/Display'
+import BountyForm from './components/BountyForm'
 
 function App(){
+    const [bounties, setBounties] = useState([])
+
     useEffect(() => {
         axios.get('/bounties')
-            .then(res => console.log(res.data))
+            .then(res => {
+                setBounties(() => res.data)
+            })
             .catch(err => console.log(err))
     }, [])
 
+    function addBounty(firstName, lastName, bounty){
+        axios.post('/bounties', {
+            firstName,
+            lastName,
+            bounty
+        })
+        .then(res => setBounties())
+        .catch(err => console.log(err))
+    }
+
+    if(bounties){
+        console.log(bounties)
+    } else {
+        console.log('Loading')
+    }
+
     return (
-        <BountyContainer>
-            <h1>App Page</h1>
-        </BountyContainer>
+        <>
+        <Header></Header>
+        <div>
+            <BountyForm addBounty={addBounty}></BountyForm>
+            <Display></Display>
+        </div>
+        </>
     )
 }
 

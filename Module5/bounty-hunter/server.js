@@ -8,7 +8,7 @@ const port = 9434
 app.use(express.json())
 app.use(morgan('dev'))
 
-mongoose.connect(`mongodb://localhost:${port}/bounty-hunter`,
+mongoose.connect(`mongodb://localhost:27017/bounty-hunter`,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
@@ -23,4 +23,4 @@ app.use('/bounties', require('./routes/bountyRouter.js'))
 app.use('/users', require('./routes/killRouter.js'))
 
 
-app.listen(9000, () => console.log(`Server is running on ${port}`))
+app.listen(port, () => console.log(`Server is running on ${port}`))
