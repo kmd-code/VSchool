@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 
 function BountyForm(props){
     const initInputs = {firstName: props.firstName || "", lastName: props.lastName || "", bounty: props.bounty || ""}
-    const [formData, setFormData] = useState({initInputs})
+    const [formData, setFormData] = useState({firstName: '', lastName: '', bounty: 0})
     
     function handleChange(e){
         const {name, value} = e.target

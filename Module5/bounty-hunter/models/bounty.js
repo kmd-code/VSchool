@@ -18,10 +18,6 @@ const bountySchema = new Schema({
     bounty: {
         type: Number,
         required: true
-    },
-    image: {
-        type: String,
-        required: true
     }
 })
 

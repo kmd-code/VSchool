@@ -13,11 +13,14 @@ userRouter.get('/', (req, res, next) => {
 })
 
 userRouter.get('/:userId', (req, res, next) => {
-    User.findOne((err, user) => {
+    User.findById(
+        req.params.userId, 
+        (err, user) => {
         if(err) {
             res.status(500)
-            next(err)
+            return next(err)
         }
+        return res.status(201).send(user)
     })
 })
 
