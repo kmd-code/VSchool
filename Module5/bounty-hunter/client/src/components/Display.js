@@ -1,14 +1,15 @@
 import React from 'react'
+import BountyTile from './BountyTile'
 
 function Display(props){
-    const bountyList = props.bounties.map(bounty => {
+
+    const bountyList = props.bounties.map(bountyObj => {
         return (
-            <div key={bounty._id} className='bountyTile'>
-                <p>{`${bounty.firstName} ${bounty.lastName}`}</p>
-                <p>{bounty.bounty}</p>
-            </div>
+            <BountyTile key={bountyObj._id} bountyObj={bountyObj}/>
         )
     })
+
+
     return (
         <div className='bountyContainer'>
             {bountyList}

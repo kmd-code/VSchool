@@ -14,6 +14,7 @@ function App(){
         axios.get('/bounties')
             .then(res => {
                 setBounties(() => res.data)
+                console.log(res.data)
             })
             .catch(err => console.log(err))
     }, [])
@@ -33,7 +34,7 @@ function App(){
             bounty,
             isAlive: true
         })
-        .then(res => setBounties())
+        .then(resp => setBounties(prevBounties => ([...prevBounties, resp.data])))
         .catch(err => console.log(err))
     }
 

@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 
 function BountyForm(props){
-    const initInputs = {firstName: props.firstName || "", lastName: props.lastName || "", bounty: props.bounty || ""}
     const [formData, setFormData] = useState({firstName: '', lastName: '', bounty: 0})
     
     function handleChange(e){
@@ -29,10 +28,11 @@ function BountyForm(props){
                 value={formData.lastName}
                 onChange={handleChange}
             ></input>
+            <label for="bounty">Bounty: </label>
             <input 
                 name='bounty' 
+                id="bounty"
                 type='number' 
-                placeholder='Bounty...'
                 value={formData.bounty}
                 onChange={handleChange}
             ></input>
