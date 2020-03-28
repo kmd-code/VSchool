@@ -1,6 +1,6 @@
 const express = require("express")
 const todoRouter = express.Router()
-const Todo = require('../models/todo.js.js')
+const Todo = require('../models/todo.js')
 
 // Get All Todos
 todoRouter.get("/", (req, res, next) => {
@@ -15,6 +15,7 @@ todoRouter.get("/", (req, res, next) => {
 
 // Add new Todo
 todoRouter.post("/", (req, res, next) => {
+  req.body.user = req.user._id
   const newTodo = new Todo(req.body)
   newTodo.save((err, savedTodo) => {
     if(err){
