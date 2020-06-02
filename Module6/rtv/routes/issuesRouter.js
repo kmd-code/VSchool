@@ -13,6 +13,7 @@ issuesRouter.get('/', (req, res, next) => {
 })
 
 issuesRouter.post('/', (req, res, next) => {
+    req.body.user = req.user._id
     const newIssue = new Issue(req.body)
     newIssue.save((err, savedIssue) => {
         if(err){
