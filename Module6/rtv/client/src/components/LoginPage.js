@@ -7,7 +7,7 @@ function LoginPage(props) {
         password: ''
     }
     const [input, setInput] = useState(initInput)
-    const [returningUser, setReturningUser] = useState(true)
+    const [existingUser, setExistingUser] = useState(true)
 
     function handleChange(e){
         const {name, value} = e.target
@@ -27,7 +27,7 @@ function LoginPage(props) {
 
     function handleToggle(e){
         e.preventDefault()
-        setReturningUser(prevToggle => !prevToggle)
+        setExistingUser(prevToggle => !prevToggle)
     }
 
     if(localStorage.getItem("user")){
@@ -36,8 +36,8 @@ function LoginPage(props) {
         )
     } else { 
         return (
-            <form>
-                <h1>{returnUser ? 'Welcome Back', 'Sign Up'}/h1>
+            <form handleSubmit={handleSubmit}>
+                <h1>{existingUser ? "Login" : "Signup"}</h1>
                     <input 
                         onChange={handleChange} 
                         name='username' 
@@ -52,7 +52,8 @@ function LoginPage(props) {
                         type='text'
                         placeholder='Password'
                     />
-                <button onClick={handleSubmit}>Login</button>
+                <button>Login</button>
+                <button onClick={handleToggle}>{existingUser ? "New User?" : "Existing User?"}</button>
             </form>
         )         
     }
