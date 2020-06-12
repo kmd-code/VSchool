@@ -5,26 +5,22 @@ const UserContext = React.createContext()
 
 function UserContextProvider(props) {
     const initState = {
-        username: '',
-        password: '',
-        email: ''
+        user: {},
+        token: '',
     }
-    const user = useState(initState)
+    const [userState, setUserState] = useState(initState)
 
-    function login(user){
-        axios.post('/auth/login', user)
-            .then(res => console.log(res))
-            .catch(err => console.log(err))
-    }
-
-    function signup(user){
-        axios.post('/auth/signup', user)
-            .then(res => console.log(res))
-            .catch(err => console.log(err))
+    function signup(credentials) {
+        axios.post('/auth/signup', credentials)
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
     }
 
     return (
-        <UserContext.Provider value={user, login, signup}>
+        <UserContext.Provider value={{
+            ...userState, 
+            signup
+        }}>
             {props.children}
         </UserContext.Provider>
     )
