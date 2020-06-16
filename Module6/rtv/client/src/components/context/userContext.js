@@ -16,10 +16,17 @@ function UserContextProvider(props) {
         .catch(err => console.log(err))
     }
 
+    function login(credentials) {
+        axios.post('/auth/login', credentials)
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+    }
+
     return (
         <UserContext.Provider value={{
             ...userState, 
-            signup
+            signup,
+            login
         }}>
             {props.children}
         </UserContext.Provider>
