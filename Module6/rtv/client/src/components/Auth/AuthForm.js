@@ -1,14 +1,26 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const Form = styled.form`
+    display: flex;
+    width: 25%;
+    padding: 2%;
+`
+const Button = styled.button`
+
+`
 
 function AuthForm(props) {
     const { handleSubmit, 
             handleChange, 
             inputs: {username, password}, 
             btnText,
+            toggleForm,
+            toggleText
         } = props
 
     return (
-        <form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}>
             <input
                 type='text'
                 name='username'
@@ -23,8 +35,9 @@ function AuthForm(props) {
                 value={password}
                 placeholder='Password'
             />
-            <button>{btnText}</button>
-        </form>
+            <Button>{btnText}</Button>
+            <Button onClick={toggleForm}>{toggleText}</Button>
+        </Form>
     )
 }
 
