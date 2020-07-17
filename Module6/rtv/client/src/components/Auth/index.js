@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { UserContext } from '../context/userContext'
 import AuthForm from './AuthForm'
-
+import styled from 'styled-components'
 
 const initState = {
     username: '',

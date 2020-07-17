@@ -13,15 +13,25 @@ function UserContextProvider(props) {
     function signup(credentials) {
         console.log(credentials)
         axios.post('/auth/signup', credentials)
-        .then(res => console.log(res))
+        .then(res => {
+            handleData(res.data)
+        })
         .catch(err => console.log(err))
     }
 
     function login(credentials) {
-        console.log(credentials)
         axios.post('/auth/login', credentials)
-        .then(res => console.log(res))
+        .then(res => {
+            handleData(res.data)
+        })
         .catch(err => console.log(err))
+    }
+
+    function handleData(data) {
+        const {user, token} = data
+        localStorage.setItem("user", JSON.stringify(user))
+        localStorage.setItem("token", token)
+        setUserState(prev => ({...prev, user, token}))
     }
 
     return (
