@@ -12,7 +12,7 @@ function Auth(props) {
     const [inputs, setInputs] = useState(initState)
     const [toggle, setToggle] = useState(false)
 
-    const { signup, login }= useContext(UserContext)
+    const { signup, login, errMsg }= useContext(UserContext)
 
     function handleChange(e) {
         const {name, value} = e.target
@@ -38,7 +38,7 @@ function Auth(props) {
     
    return (
     <div>
-        {!toggle ? (
+        {toggle ? (
             <>
             <AuthForm 
                 handleChange={handleChange}
@@ -47,6 +47,7 @@ function Auth(props) {
                 btnText={"Signup"}
                 toggleForm={toggleForm}
                 toggleText={"Already a User?"}
+                errMsg={errMsg}
             />
             </>
         ) : (
@@ -58,6 +59,7 @@ function Auth(props) {
                 btnText={"Login"}
                 toggleForm={toggleForm}
                 toggleText={"Need to Signup?"}
+                errMsg={errMsg}
             />
             </>
         )}

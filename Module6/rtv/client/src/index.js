@@ -8,9 +8,9 @@ import {BrowserRouter as Router} from 'react-router-dom'
 
 ReactDOM.render(
     <UserContextProvider>
-      <Router>
-        <App />
-      </Router>
+        <Router>
+          <App />
+        </Router>
     </UserContextProvider>,
   document.getElementById('root')
 );

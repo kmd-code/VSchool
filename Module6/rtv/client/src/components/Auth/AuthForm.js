@@ -30,7 +30,8 @@ function AuthForm(props) {
             inputs: {username, password}, 
             btnText,
             toggleForm,
-            toggleText
+            toggleText,
+            errMsg
         } = props
 
     return (
@@ -51,6 +52,7 @@ function AuthForm(props) {
             />
             <Button>{btnText}</Button>
             <Button onClick={toggleForm}>{toggleText}</Button>
+            <p>{errMsg}</p>
         </Form>
     )
 }

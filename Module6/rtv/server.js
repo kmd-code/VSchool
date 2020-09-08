@@ -22,7 +22,7 @@ mongoose.connect(
 app.use('/auth', require('./routes/authRouter'))
 app.use('/api', expressJwt({ secret: process.env.SECRET }))
 app.use('/api/issues', require('./routes/issuesRouter'))
-app.use('/api/issues/comments', require('./routes/commentRouter'))
+// app.use('/api/issues/comments', require('./routes/commentRouter'))
 
 
 app.use((err, req, res, next) => {

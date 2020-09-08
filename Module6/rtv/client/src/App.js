@@ -1,12 +1,27 @@
 import React, { useContext } from 'react';
 import Auth from './components/Auth'
-// import {Route, Switch, Link} from 'react-router-dom'
+import {Route, Switch, Redirect} from 'react-router-dom'
+import ProtectedRoute from './components/Auth/ProtectedRoute'
 import {UserContext} from './components/context/userContext'
 
 function App(props) {
   const {token, logout} = useContext(UserContext)
   return (
-    <Auth />
+    <div className='app'>
+      {/* { token && <Nav logout={logout} />}
+        <Switch>
+          <Route 
+            exact path="/"
+            render={() => token ? <Redirect to='/issues'/> : <Auth />}
+          />
+          <ProtectedRoute 
+            path='/issues'
+            component={Issues}
+            redirectTo='/'
+            token={token}
+          />
+        </Switch> */}
+    </div>
   )
 }
 

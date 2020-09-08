@@ -2,6 +2,7 @@ const express = require('express')
 const issuesRouter = express.Router()
 const Issue = require('../models/Issue')
 
+
 issuesRouter.get('/', (req, res, next) => {
     Issue.find((err, issues) => {
         if(err){
@@ -22,6 +23,37 @@ issuesRouter.post('/', (req, res, next) => {
         }
         return res.status(201).send(savedIssue)
     })
+})
+
+issuesRouter.post('/:id/comment', (req, res, next) => {
+    req.body.user = req.user._id
+    Issue.findByIdAndUpdate(
+        req.params.id,
+        {$push: {"comments": req.body}},
+        {new: true},
+        (err, updatedIssue) => {
+            if(err){
+                res.status(500)
+                return next(err)
+            }
+            return res.status(201).send(updatedIssue)
+        }
+    )
+})
+
+issuesRouter.put('/:postId/comment/:commentId', (req, res, next) => {
+    Issue.findOneAndUpdate(
+        { _id: req.params.postId, "comments._id": req.params.commentId},
+        {$set: {"comments.$.comment": req.body.comment}},
+        {new: true},
+        (err, updatedIssueComment) => {
+            if(err){
+                res.status(500)
+                return next(err)
+            }
+            return res.status(200).send(updatedIssueComment)
+        }
+    )
 })
 
 issuesRouter.delete('/:issueId', (req, res, next) => {

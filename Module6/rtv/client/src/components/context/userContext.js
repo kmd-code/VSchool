@@ -5,18 +5,18 @@ const UserContext = React.createContext()
 
 function UserContextProvider(props) {
     const initState = {
-        user: {},
-        token: '',
+        user: JSON.parse(localStorage.getItem('user')) || {},
+        token: localStorage.getItem('token') || '',
+        errMsg: ""
     }
     const [userState, setUserState] = useState(initState)
 
     function signup(credentials) {
-        console.log(credentials)
         axios.post('/auth/signup', credentials)
         .then(res => {
             handleData(res.data)
         })
-        .catch(err => console.log(err))
+        .catch(err => handleAuthErr(err.response.data.errMsg))
     }
 
     function login(credentials) {
@@ -24,7 +24,17 @@ function UserContextProvider(props) {
         .then(res => {
             handleData(res.data)
         })
-        .catch(err => console.log(err))
+        .catch(err => handleAuthErr(err.response.data.errMsg))
+    }
+
+    function logout(){
+        localStorage.clear('token')
+        localStorage.clear('user')
+        setUserState({
+            user: {},
+            token: '',
+            errMsg: ''
+        })
     }
 
     function handleData(data) {
@@ -34,11 +44,19 @@ function UserContextProvider(props) {
         setUserState(prev => ({...prev, user, token}))
     }
 
+    function handleAuthErr(errMsg){
+        setUserState(prev => ({
+            ...prev,
+            errMsg
+        }))
+    }
+
     return (
         <UserContext.Provider value={{
             ...userState, 
             signup,
-            login
+            login,
+            logout
         }}>
             {props.children}
         </UserContext.Provider>
