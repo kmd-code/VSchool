@@ -56,6 +56,22 @@ issuesRouter.put('/:postId/comment/:commentId', (req, res, next) => {
     )
 })
 
+issuesRouter.delete('/:postId/comment/:commentId', (req,res,next) => {
+    req.body.user = req.user._id
+    Issue.findOneAndUpdate(
+        { _id: req.params.postId, "comments._id": req.params.commentId },
+        {$pull: { comments: {user: req.user._id, _id: req.params.commentId}}},
+        {new: true},
+        (err, deletedIssueComment) => {
+            if(err) {
+                res.status(500)
+                return next(err)
+            }
+            return res.status(200).send(deletedIssueComment)
+        }
+    )
+})
+
 issuesRouter.delete('/:issueId', (req, res, next) => {
     Issue.findOneAndDelete({ _id: req.params.id }, (err, deletedItem) => {
         if(err){
