@@ -8,6 +8,15 @@ const initState = {
     password:''
 }
 
+const Container = styled.div`
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+`
+
 function Auth(props) {
     const [inputs, setInputs] = useState(initState)
     const [toggle, setToggle] = useState(false)
@@ -17,18 +26,21 @@ function Auth(props) {
     function handleChange(e) {
         const {name, value} = e.target
         setInputs(prev => ({...prev, [name]: value}))
+        console.log(inputs)
     }
 
     function handleSignup(e) {
         e.preventDefault()
         signup(inputs)
         setInputs(initState)
+        console.log("Signup Function")
     }
 
     function handleLogin(e) {
         e.preventDefault()
         login(inputs)
         setInputs(initState)
+        console.log("Login Function")
     }
 
     function toggleForm (e) {
@@ -37,35 +49,14 @@ function Auth(props) {
     }
     
    return (
-    <div>
-        {toggle ? (
-            <>
-            <AuthForm 
-                handleChange={handleChange}
-                handleSubmit={handleSignup}
-                inputs={inputs}
-                btnText={"Signup"}
-                toggleForm={toggleForm}
-                toggleText={"Already a User?"}
-                errMsg={errMsg}
-            />
-            </>
-        ) : (
-            <>
-            <AuthForm 
-                handleChange={handleChange}
-                handleSubmit={handleLogin}
-                inputs={inputs}
-                btnText={"Login"}
-                toggleForm={toggleForm}
-                toggleText={"Need to Signup?"}
-                errMsg={errMsg}
-            />
-            </>
-        )}
-    </div>
-   )
-
+        <AuthForm 
+            handleChange={handleChange}
+            handleSignUp={handleSignup}
+            handleLogin={handleLogin}
+            inputs={inputs}
+            errMsg={errMsg}
+        />
+    ) 
 }
 
 export default Auth
