@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import axios from 'axios'
 
 const IssueContext = React.createContext()
@@ -13,10 +13,32 @@ userAxios.interceptors.request.use(config => {
 function IssueContextProvider(props){
     const [issueState, setIssueState] = useState()
 
-    function getIssues(){
-        userAxios.get('/api/issues')
+    const getIssues = async () => {
+        try {
+            const resp = await userAxios.get('/api/issues')
+            setIssueState(resp.data)
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+    // function getIssues(){
+    //     userAxios.get('/api/issues')
+    //         .then(res => {
+    //             setIssueState(res.data)
+    //             console.log(res.data)
+    //         })
+    //         .catch(err => {
+    //             console.log(err)
+    //         })
+    // }
+
+    function postIssue(input){
+        userAxios.post('/api/issues', input)
             .then(res => {
-                console.log(res.data)
+                const issues = res.data
+                setIssueState((prev) => [...prev, issues])
+                console.log(issueState)
             })
             .catch(err => {
                 console.log(err)
@@ -26,7 +48,8 @@ function IssueContextProvider(props){
     return (
         <IssueContext.Provider value={{
             ...issueState,
-            getIssues
+            getIssues,
+            postIssue
         }}>
             {props.children}
         </IssueContext.Provider>

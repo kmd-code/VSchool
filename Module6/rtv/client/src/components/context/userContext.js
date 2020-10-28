@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import {Redirect} from 'react-router-dom'
 import axios from 'axios'
 
 const UserContext = React.createContext()
@@ -35,6 +36,9 @@ function UserContextProvider(props) {
             token: '',
             errMsg: ''
         })
+        return (
+            <Redirect to='/' />
+        )
     }
 
     function handleData(data) {

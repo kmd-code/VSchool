@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -36,16 +36,12 @@ export default function AuthForm(props) {
         handleSignup,
         handleLogin, 
         handleChange, 
+        toggleForm,
+        toggle,
         errMsg
     } = props
 
-    const classes = useStyles();
-
-    const [toggleForm, setToggleForm] = useState(false)
-
-    function toggle() {
-        setToggleForm(prevState => !prevState)
-    }
+    const classes = useStyles()
 
     return (
         <Container component="main" maxWidth="xs">
@@ -55,7 +51,7 @@ export default function AuthForm(props) {
             <WhereToVote />
             </Avatar>
             <Typography component="h1" variant="h5">
-            {toggleForm ? "Create New Account" : "Sign In"}
+            {toggle ? "Create New Account" : "Sign In"}
             </Typography>
             <form className={classes.form} noValidate>
             <TextField
@@ -80,23 +76,23 @@ export default function AuthForm(props) {
                 id="password"
                 onChange={handleChange}
             />
-            <Button
-                type="submit"
+                <Button
+                
                 fullWidth
                 variant="contained"
                 color="primary"
                 className={classes.submit}
-                onClick={() => toggleForm ? handleSignup() : handleLogin()}
+                onClick={(e) => toggle ? handleSignup(e) : handleLogin(e)}
             >
-                {toggleForm ? "New Account" : "Sign In"}
-            </Button>
+                {toggle ? "New Account" : "Login"}
+                </Button>
             <Grid container>
                 <Grid item xs>
                     {errMsg}
                 </Grid>
                 <Grid item>
-                <Link onClick={toggle} variant="body2">
-                    {toggleForm ? "Already have an account? Sign In" : "Don't have an account? Sign Up"}
+                <Link onClick={toggleForm} variant="body2">
+                    {toggle ? "Already have an account? Sign In" : "Don't have an account? Sign Up"}
                 </Link>
                 </Grid>
             </Grid>
