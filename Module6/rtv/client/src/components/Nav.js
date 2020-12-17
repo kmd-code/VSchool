@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Nav(props) {
     const classes = useStyles()
 
-    console.log(props.user)
+    // console.log(props.user)
 
     return (
         <div className={classes.root}>

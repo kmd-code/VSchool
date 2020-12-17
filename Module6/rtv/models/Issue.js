@@ -37,6 +37,10 @@ const issueSchema = new Schema({
                 type: Schema.Types.ObjectId,
                 ref: "User",
                 required: true
+            },
+            postingUser: {
+                type: String,
+                required: true
             }
     }
     ],

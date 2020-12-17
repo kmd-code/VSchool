@@ -27,6 +27,7 @@ issuesRouter.post('/', (req, res, next) => {
 
 issuesRouter.post('/:id/comment', (req, res, next) => {
     req.body.user = req.user._id
+    req.body.postingUser = req.user.username
     Issue.findByIdAndUpdate(
         req.params.id,
         {$push: {"comments": req.body}},
@@ -36,7 +37,7 @@ issuesRouter.post('/:id/comment', (req, res, next) => {
                 res.status(500)
                 return next(err)
             }
-            return res.status(201).send(updatedIssue)
+            return res.status(201).send(updatedIssue.comments[updatedIssue.comments.length - 1])
         }
     )
 })

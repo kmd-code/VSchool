@@ -1,6 +1,5 @@
-import React, {useState, useContext} from 'react'
+import React, {useState} from 'react'
 import { makeStyles } from "@material-ui/core/styles"
-import {IssueContext} from './context/issueContext'
 
 import Typography from '@material-ui/core/Typography'
 import TextField from '@material-ui/core/TextField'

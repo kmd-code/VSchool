@@ -1,10 +1,11 @@
-import React, { useEffect, useContext, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Issues from './Issues'
 import InputForm from './InputForm'
 import { makeStyles } from "@material-ui/core/styles"
 import axios from 'axios'
 
 import Grid from '@material-ui/core/Grid'
+import Container from '@material-ui/core/Container'
 
 const userAxios = axios.create()
 
@@ -23,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
 function Home(){
     const classes = useStyles()
     const [issueState, setIssueState] = useState()
+    
 
     function postIssue(input){
         userAxios.post('/api/issues', input)
@@ -40,6 +42,7 @@ function Home(){
         try {
             const resp = await userAxios.get('/api/issues')
             setIssueState(resp.data)
+            // console.log(resp.data)
         } catch (err) {
             console.log(err)
         }
@@ -49,8 +52,8 @@ function Home(){
         getIssues()
     }, [])
     
-
     return(
+        <Container>
          <Grid container direction='column'>
             <Grid item container spacing={2}>
             <Grid item xs={2} />
@@ -59,12 +62,17 @@ function Home(){
                     postIssue={postIssue}
                 />
                 {
-                    issueState ? <Issues issues={issueState} /> : "Loading"
+                    issueState ? issueState.map((issue) => {
+                        return (
+                            <Issues key={issue._id} issue={issue} />
+                        )
+                    }) : "Loading"
                 }
             </Grid>
             <Grid item xs={2} />
             </Grid>
         </Grid>
+        </Container>
     )
     
     
