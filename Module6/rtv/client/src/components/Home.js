@@ -31,7 +31,6 @@ function Home(){
             .then(res => {
                 const issues = res.data
                 setIssueState((prev) => [...prev, issues])
-                console.log(issueState)
             })
             .catch(err => {
                 console.log(err)
@@ -52,6 +51,10 @@ function Home(){
         getIssues()
     }, [])
     
+    const handleVote = (upDown) => {
+
+    }
+
     return(
         <Container>
          <Grid container direction='column'>
@@ -64,7 +67,7 @@ function Home(){
                 {
                     issueState ? issueState.map((issue) => {
                         return (
-                            <Issues key={issue._id} issue={issue} />
+                            <Issues key={issue._id} issue={issue} handleVote={handleVote()} />
                         )
                     }) : "Loading"
                 }

@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     textInput: {
         width: '90%',
         marginTop: "5px",
-        marginBottom: "5px",
+        marginBottom: "5px"
     },
     submitButton: {
         width: '40%',
@@ -73,7 +73,7 @@ export default function InputForm(props){
                             id='outlined-basic' 
                             className={classes.textInput} 
                             variant='outlined' 
-                            label='Super Important Issue' 
+                            label='Issue' 
                             required
                             size='small'
                             name="title"
@@ -84,7 +84,7 @@ export default function InputForm(props){
                             id='outlined-basic'
                             className={classes.textInput}
                             variant='outlined'
-                            label='Super Important Description'
+                            label='Description'
                             required
                             multiline
                             rowsMax={3}
@@ -107,6 +107,7 @@ export default function InputForm(props){
                             }
                         }} 
                         variant='outlined' 
+                        style={{color: 'green'}}
                         className={classes.submitButton}>
                             Submit
                     </Button>

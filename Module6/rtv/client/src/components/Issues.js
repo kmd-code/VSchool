@@ -9,6 +9,9 @@ import TextField from '@material-ui/core/TextField'
 import Paper from '@material-ui/core/Paper'
 import Button from '@material-ui/core/Button'
 import Container from '@material-ui/core/Container'
+import ButtonGroup from '@material-ui/core/ButtonGroup'
+
+import {ThumbUp, ThumbDown, DeleteForever} from '@material-ui/icons'
 
 const userAxios = axios.create()
 
@@ -22,22 +25,34 @@ const useStyles = makeStyles((theme) => ({
     issueContainer: {
         height: 'auto',
         margin: '15px 0px ',
-        padding: '12px'
-    },
-    commentBox: {
-        width: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
+        padding: '20px',
     },
     textfield: {
         width: '100%',
+
     },
     existingComment: {
         width: '100%',
-        padding: '5px 0px',
-        margin: '5px 0px',
-        
+        height: '30px', 
+        padding: '10px 10px',
+        margin: '10px 0px',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        '@media (max-width: 780px)' : {
+            fontSize: '12px',
+            height: 'auto'
+        }     
+    },
+    title: {
+        '@media (max-width: 450px)' : {
+            fontSize: '30px'
+        }
+    },
+    desc: {
+        '@media (max-width: 450px)' : {
+            fontSize: '16px'
+        }
     }
 }))
 
@@ -50,22 +65,47 @@ export default function Issues(props){
     const [commentText, setCommentText] = useState({comment: ""})
     
 
-    let title = props.issue.title
+    let {title, description} = props.issue
 
     let comments = commentState.map((comment) => {
         const user = comment.postingUser
         const description = comment.comment
         const userId = comment.user
-        const time = comment.timeStamp
+
         return (
             <Paper key={comment._id}>
-                <Typography variant='body1'>
-                    {user}: {description}
-                {userId === userState.user._id ? <Button>Test</Button> : ""}
+                <Typography className={classes.existingComment} variant='body1'>
+                   {`${user} : ${description}`}
+                {userId === userState.user._id ? 
+                    <Button 
+                        className={classes.deleteButton} 
+                        onClick={(e) => deleteButton(e, comment._id)}
+                        startIcon={<DeleteForever />} 
+                        style={{color: 'red'}}
+                        />   
+                        : 
+                            ""}
                 </Typography>
             </Paper>
         )
     })
+
+    // function timeStamp(utcTime){
+    //     const time = new Date(utcTime)
+
+    //     const month = time.getMonth()
+    //     const day = time.getDay()
+    //     const hour = time.getHours()
+    //     const minute = time.getMinutes()
+
+    //     const monthArr = [
+    //         "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    //     ]
+
+    //     return (
+    //         <>{`${monthArr[month]} ${day}, ${hour}:${minute}`}</>
+    //     )
+    // }
 
     function submitComment(e) {
         e.preventDefault()
@@ -75,15 +115,25 @@ export default function Issues(props){
                     .then(res => {
                     let comment = res.data
                     setComments(prev => [...prev, comment])
-                    console.log(res.data)
+                    setCommentText({comment: ""})
                     })
                     .catch(err => console.log(err))
                 }
             else {
                 alert("Please Enter a Comment")
             }
-            setCommentText(() => ({comment: ""}))
-            console.log(commentText)
+            
+    }
+
+    function deleteButton(e, id) {
+        e.preventDefault()
+        userAxios.delete(`/api/issues/${props.issue._id}/comment/${id}`)
+            .then(res => {
+                setComments(res.data.comments)
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }
 
     function handleChange(e){
@@ -96,28 +146,49 @@ export default function Issues(props){
             key={props.issue._id}
             className={classes.issueContainer}
         >
-            <Typography variant='h5'>
+            <Typography className={classes.title} variant='h4'>
                 {title}
             </Typography>
-            <Container
-                className={classes.existingComment}
-            >
-            {comments}
+
+            <Typography className={classes.desc} variant='subtitle1'>
+                {description}
+            </Typography>
+
+            <Container className={classes.commentCont}>
+                {comments}
             </Container>
-            <Container className={classes.commentBox}>
+
                 <form onSubmit={(e) => submitComment(e)}>
                 <TextField
                     variant="outlined"
                     margin="normal"
                     label="Comment..."
                     autoFocus
+                    fullWidth
                     className={classes.textfield}
                     onChange={handleChange}
                     name='comment'
-                    value={commentText.text}  
+                    value={commentText.comment}  
                 />
                 </form>
+
+            <Container>
+                <ButtonGroup>
+                    <Button
+                        startIcon={<ThumbUp />}
+                        style={{color: 'green'}}
+                    >
+                    (5)
+                    </Button>
+                    <Button
+                        startIcon={<ThumbDown />}
+                        style={{color: 'red'}}
+                    >
+                    (-4)
+                    </Button>
+                </ButtonGroup>
             </Container>
+
         </Paper>
     )
 }

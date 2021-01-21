@@ -74,7 +74,7 @@ issuesRouter.delete('/:postId/comment/:commentId', (req,res,next) => {
 })
 
 issuesRouter.delete('/:issueId', (req, res, next) => {
-    Issue.findOneAndDelete({ _id: req.params.id }, (err, deletedItem) => {
+    Issue.findOneAndDelete({ _id: req.params.issueId }, (err, deletedItem) => {
         if(err){
             res.status(500)
             return next(err)
@@ -85,7 +85,7 @@ issuesRouter.delete('/:issueId', (req, res, next) => {
 
 issuesRouter.put('/:issueId', (req, res, next) => {
     Issue.findOneAndUpdate(
-        { _id: req.params.id }, 
+        { _id: req.params.issueId }, 
         req.body, 
         { new: true }, 
         (err, updatedIssue) => {
@@ -96,5 +96,41 @@ issuesRouter.put('/:issueId', (req, res, next) => {
             return res.status(200).send(updatedIssue)
     })
 })
+
+issuesRouter.get('/:issueId/votes', (req, res, next) => {
+    Issue.findOne( { _id: req.params.issueId }, (err, issue) => {
+        if(err) {
+            res.status(500)
+            return next(err)
+        }
+        return res.status(200).send(issue.votes)
+    })
+})
+
+//         + Upvote and Downvote Logic?? +
+
+// issuesRouter.put('/:issueId/votes/:upDown', (req, res, next) =>{
+//     Issue.findByIdAndUpdate(
+//         req.params.issueId,
+//         {$function: {
+//             body: function(upDown){
+//                 if(upDown == "up"){
+                    
+//                 }
+//             },
+//             args: [req.params.upDown],
+//             lang: "js"
+//         }},
+//         {new: true},
+//         (err, updatedVote) => {
+//             if (err) {
+//                 res.status(500)
+//                 return next(err)
+//             }
+//             res.status(200).send(updatedVote.votes)
+//         }
+//     )
+// })
+
 
 module.exports = issuesRouter

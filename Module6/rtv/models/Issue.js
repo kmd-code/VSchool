@@ -10,13 +10,9 @@ const issueSchema = new Schema({
         type: String,
         default: ""
     },
-    upVotes: {
-        type: Number,
-        default: 0
-    },
-    downVotes: {
-        type: Number,
-        default: 0
+    votes: {
+        upVotes: [],
+        downVotes: []
     },
     user: {
         type: Schema.Types.ObjectId,
