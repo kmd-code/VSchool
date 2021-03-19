@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Issues from './Issues'
 import InputForm from './InputForm'
-import { makeStyles } from "@material-ui/core/styles"
 import axios from 'axios'
 
 import Grid from '@material-ui/core/Grid'
@@ -15,14 +14,7 @@ userAxios.interceptors.request.use(config => {
     return config
 })
 
-
-const useStyles = makeStyles((theme) => ({
-    
-}))
-
-
 function Home(){
-    const classes = useStyles()
     const [issueState, setIssueState] = useState()
     
 
