@@ -1,40 +1,35 @@
 import React, { useState } from 'react'
-import Login from './Auth/Login'
-import Signup from './Auth/Signup'
+import Login from './auth/Login'
+import Signup from './auth/Signup'
 import { AuthProvider } from './context/AuthContext'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import PrivateRoute from './PrivateRoute'
-import Dashboard from './Dashboard'
+import PrivateRoute from './auth/PrivateRoute'
+import Controls from './pages/Controls'
 
 function App() {
 
   const [error, setError] = useState('')
-  const [loading, setLoading] = useState(false)
-
+  
   const value = {
     error,
-    loading,
-    setError,
-    setLoading
+    setError
   }
-  
+
 
   return (
-    <Router>
       <AuthProvider>
-        <Switch>
-          <PrivateRoute exact path='/' render={(props) => (
-            <Dashboard {...props} value={value}/>
-          )} />
-          <Route path='/signup' render={(props) => (
-            <Signup {...props} value={value}/>
-          )}/>
-          <Route path='/login' render={(props) => (
-            <Login {...props} value={value}/>
-          )} />
+        <Router>
+        <Switch>        
+          <Route path='/signup'>
+            <Signup />  
+          </Route>        
+          <Route path='/login'>
+            <Login />
+          </Route>
+          <PrivateRoute path='/home' component={Controls} />  
         </Switch> 
+        </Router>
       </AuthProvider>
-    </Router>
   )
 }
 

@@ -1,15 +1,17 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 
 export default function Login(props) {
     const { signup } = useAuth()
-    const { error, setError, loading, setLoading } = props.value
     
     const userEmail = useRef()
     const userPass = useRef()
     const passConfirm = useRef()
     const history = useHistory()
+
+    const [error, setError] = useState('')
+    const [loading, setLoading] =useState(false)
 
     async function handleSubmit(e){
         e.preventDefault()
@@ -22,12 +24,12 @@ export default function Login(props) {
             setError('')
             setLoading(true)
             await signup(userEmail.current.value, userPass.current.value)
-            history.push('/')
+            history.push('/home/dashboard')
         } catch {
             setError("Failed to create account")
+        } finally {
+            setLoading(false)
         }
-
-        setLoading(false)
     }
     
 

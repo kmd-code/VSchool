@@ -54,6 +54,9 @@ product(1,1,1,10,5,2)
 //more es6
 unshift = ([...arr], ...letters) => [...arr, ...letters];
 
+let array = [f, g, h]
+console.log(unshift(array, a, b, c, d, e))
+
 //double black
 populatePeople = (names) => {
     return names.map((name) => {
