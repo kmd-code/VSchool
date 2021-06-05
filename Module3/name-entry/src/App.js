@@ -34,7 +34,7 @@ class App extends Component {
         <form onSubmit={this.handleSubmit}>
           <label>
             Name:
-            <input onSubmit={} type="text" name="name" onChange={this.handleChange} placeholder="Enter Name Here" />
+            <input type="text" name="name" onChange={this.handleChange} placeholder="Enter Name Here" />
           </label>
             <input type="submit" value="Submit" />
         </form>
